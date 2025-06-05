@@ -119,6 +119,15 @@
         <button class="carousel-btn left" onclick="prevSlide()">&#10094;</button>
         <button class="carousel-btn right" onclick="nextSlide()">&#10095;</button>
       </div>
+
+      <div class="carousel-dots">
+        <span class="dot active" onclick="currentSlideGo(1)"></span>
+        <span class="dot" onclick="currentSlideGo(2)"></span>
+        <span class="dot" onclick="currentSlideGo(3)"></span>
+        <span class="dot" onclick="currentSlideGo(4)"></span>
+        <span class="dot" onclick="currentSlideGo(5)"></span>
+        <span class="dot" onclick="currentSlideGo(6)"></span>
+      </div>
     </section>
 
     <section class="about">
@@ -134,12 +143,16 @@
   <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    let slideInterval;
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.remove('active');
+        dots[i].classList.remove('active');
         if (i === index) {
           slide.classList.add('active');
+          dots[i].classList.add('active');
         }
       });
     }
@@ -154,7 +167,44 @@
       showSlide(currentSlide);
     }
 
-    setInterval(nextSlide, 3000); // 3 seconds
+    function currentSlideGo(n) {
+      currentSlide = n - 1;
+      showSlide(currentSlide);
+      resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+      slideInterval = setInterval(nextSlide, 4000); // 4 seconds
+    }
+
+    function resetAutoSlide() {
+      clearInterval(slideInterval);
+      startAutoSlide();
+    }
+
+    // Start auto-sliding
+    startAutoSlide();
+
+    // Pause auto-slide on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', () => {
+      clearInterval(slideInterval);
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+      startAutoSlide();
+    });
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoSlide();
+      }
+    });
   </script>
 </body>
 </html>
