@@ -1,7 +1,7 @@
 <?php
-$servername = "padmaoil.local";
-$username = "padmaoil183";
-$password = "padmaoil183";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "Padma_Oil";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
