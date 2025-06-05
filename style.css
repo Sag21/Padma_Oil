@@ -35,7 +35,7 @@ footer {
   color: white;
 }
 
-
+/* Home Page Slider Styling */
 
 .oil-carousel {
   background-color: #fff9ec;
@@ -88,6 +88,7 @@ footer {
   color: #333;
 }
 
+/* Products page styling */
 
 .product-showcase {
   padding: 40px 20px;
@@ -101,10 +102,11 @@ footer {
 }
 
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(4, 1fr));
   justify-content: center;
   gap: 20px;
+  padding: 20px;
 }
 
 .product-card {

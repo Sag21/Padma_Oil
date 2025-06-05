@@ -35,7 +35,7 @@ if ($conn->connect_error) {
             <h2>Our Edible Oils</h2>
             <div class="product-grid">
                 <?php
-                $result = $conn->query("SELECT * FROM product");
+                $result = $conn->query("SELECT * FROM products");
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="product-card">';
                     echo '<img src="images/' . htmlspecialchars($row['image']) . '" alt="' . htmlspecialchars($row['name']) . '">';
