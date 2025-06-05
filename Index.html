@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padma Oil Industry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Padma Oil Industry</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="description">
+      <h2>Pure, Cold-Pressed Cooking Oils</h2>
+      <p>Fresh and chemical-free. Delivered to your doorstep.</p>
+    </section>
+
+    <section class="oil-carousel">
+      <div class="carousel-container">
+        <div class="carousel-slide active">
+          <img src="images/1.jpeg" alt="Groundnut Oil">
+          <div class="carousel-text">
+            <h2>Groundnut Oil</h2>
+            <p>Rich in antioxidants and Vitamin E. Ideal for deep frying and heart health.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="images/2.jpg" alt="Mustard Oil">
+          <div class="carousel-text">
+            <h2>Mustard Oil</h2>
+            <p>Boosts immunity, improves digestion, and has natural antibacterial properties.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="images/4.jpg" alt="Coconut Oil">
+          <div class="carousel-text">
+            <h2>Coconut Oil</h2>
+            <p>Great for skin, hair, and cooking. Contains healthy saturated fats.</p>
+          </div>
+        </div>
+        <button class="carousel-btn left" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-btn right" onclick="nextSlide()">&#10095;</button>
+      </div>
+    </section>
+
+    <section class="about">
+      <h3>About Us</h3>
+      <p>Padma Oil Industry is dedicated to providing high-quality, cold-pressed cooking oils for healthy living.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Padma Oil Industry</p>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 3000); // 3 seconds
+  </script>
+</body>
+</html>
