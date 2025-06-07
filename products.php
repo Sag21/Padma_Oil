@@ -27,10 +27,6 @@ if ($conn->connect_error) {
     </header>
 
     <main>
-        <section class="description">
-            <h2>Pure, Cold-Pressed Cooking Oils</h2>
-            <p>Fresh and chemical-free. Delivered to your doorstep.</p>
-        </section>
 
         <section class="product-showcase">
             <h2>Our Edible Oils</h2>
