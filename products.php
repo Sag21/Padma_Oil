@@ -20,6 +20,7 @@ if ($conn->connect_error) {
         <nav>
             <a href="index.html">Home</a>
             <a href="products.php">Products</a>
+            <a href="about.html">About Us</a>
             <a href="cart.html">Cart</a>
             <a href="contact.html" class="active">Contact</a>
         </nav>
