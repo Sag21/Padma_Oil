@@ -48,12 +48,18 @@ nav a {
   overflow: hidden;
 }
 
-nav a:hover, nav a.active {
+nav a:not(.contact-btn):hover {
   background: linear-gradient(45deg, #ffce39, #ffeaa7);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  
+}
+
+nav a.contact-btn:hover {
+  background: linear-gradient(45deg, #ffce39, #ffeaa7) !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .description {
