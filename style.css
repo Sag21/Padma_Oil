@@ -550,6 +550,7 @@ footer {
   padding: 1.5rem;
 }
 
+
 .contact-info-card h2 {
   color: #2c3e50;
   font-size: 1.8rem;    
@@ -583,6 +584,10 @@ footer {
   font-size: 1rem;
   color: #34495e;
   line-height: 1.5;
+}
+
+.info-content:hover{
+  transform: scale(1.02);
 }
 
 .map-section {
