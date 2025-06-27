@@ -656,3 +656,17 @@ footer {
   height: 300px;
 }
 }
+
+
+/* Cart style */
+.cart-container {
+  background-color: rgb(230, 228, 228);
+  margin: 15px;
+  border-radius: 20px;
+}
+.cart-list {
+  padding: 10px;
+}
+.cart-items {
+  margin: 25px;
+}
