@@ -502,6 +502,11 @@ footer {
   transform: translateY(0);
 }
 
+.product-card select {
+  padding: 10px;
+  margin-left: 10px;
+}
+
 /* Responsive adjustments product page */
 @media (max-width: 768px) {
   .product-showcase {
